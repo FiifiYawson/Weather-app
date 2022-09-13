@@ -1,0 +1,9 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="sun icon">
+<path id="Vector" d="M32 17C40.28 17 47 23.72 47 32C47 40.28 40.28 47 32 47C23.72 47 17 40.28 17 32C17 23.72 23.72 17 32 17Z" stroke="#FFFBFB" stroke-width="4" stroke-linecap="round"/>
+<g id="Group">
+<path id="Vector_2" d="M32 59V62M59 32H62M32 5V2M5 32H2" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<path id="Vector_3" d="M51.5 51.5L53 53M51.5 12.5L53 11M12.5 12.5L11 11M12.5 51.5L11 53" stroke="#FFFDFD" stroke-width="4" stroke-linecap="round"/>
+</g>
+</g>
+</svg>
