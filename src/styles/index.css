@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+body,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sec-loading {
+  --border-width: 7px;
+  --color: #0bc2fa;
+}
+
+.sec-loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.sec-loading .one {
+  height: 80px;
+  width: 80px;
+  border: 7px solid #0bc2fa;
+  transform: rotate(45deg);
+  border-radius: 0 50% 50% 50%;
+  position: relative;
+  animation: move 0.5s linear infinite alternate-reverse;
+}
+.sec-loading .one::before{
+  content: "";
+  position: absolute;
+  height: 55%;
+  width: 55%;
+  border-radius: 50%;
+  border: 7px solid transparent;
+  border-top-color: #0bc2fa;
+  border-bottom-color: #0bc2fa;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 1s linear infinite;
+}
+
+.one.active::before{
+content: "";
+display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #000000;
+    border-bottom-color: #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes move {
+  to {
+    transform: translateY(15px) rotate(45deg);
+  }
+}
+
+@media (max-width: 1023px){
+    #info.active{
+        display: block;
+    }
+}

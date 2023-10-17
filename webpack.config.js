@@ -1,13 +1,14 @@
 const path = require("path");
-const hwp = require("html-webpack-plugin");
+const hwp = require("html-webpack-plugin")
 
 module.exports = {
     mode: "development",
-    entry: path.resolve(__dirname, "src", "index.js"),
+    entry: {
+        app: path.resolve(__dirname, "src", "scripts", "index.js"),
+    },
     output: {
         path: path.resolve(__dirname, "static"),
-        filename: "bundle.js",
-        clean: true,
+        filename: "[name].js",
     },
     devtool: "source-map",
     devServer: {
@@ -15,20 +16,24 @@ module.exports = {
         hot: true,
         static: {
             directory: path.resolve(__dirname, "static")
-        }
+        },
+        watchFiles: ["src/**/*"]
     },
-    plugins: [
-        new hwp({
-            title: "web pack plugin",
-            filename: "index.html",
-            template: path.resolve(__dirname, "src/template.html")
-        })
-    ],
     module: {
         rules: [{
             test: /\.css$/,
-            use: ["style-loader", "css-loader"]
+            use: ["style-loader", "css-loader", "postcss-loader"]
+        }, {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+        }, {
+            test: /\.html$/i,
+            loader: "html-loader",
         }]
-    }
-
+    },
+    plugins: [
+        new hwp({
+            template: path.resolve(__dirname, "src", "index.html")
+        })
+    ]
 }

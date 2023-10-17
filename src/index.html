@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="py-7 px-7 flex min-w-full">
+        <aside class=" hidden bg-slate-500 h-[calc(100dvh-50px)] p-5 overflow-auto text-slate-200 flex-col gap-7 rounded-[28px] lg:flex lg:sticky lg:translate-x-0 lg:translate-y-0 lg:left-0 lg:top-7 lg:max-w-[350px]  ">
+            <article>
+                <h1 class="text-xl mb-1 text-white">Powered by</h1>
+                <a target="_blank" href="https://openweathermap.org/">
+                <img width="150" src="./images/open_weather_logo.png" alt="open weather map">
+                </a>
+            </article>
+            <article>
+                <h1 class="text-xl mb-1 text-white">About</h1>
+                <p>This is a weather app built to provide the current weather predictions and weather forcast for the following seven days.</p>
+            </article>
+            <article>
+                <h1 class="text-xl mb-1 text-white">Data Accuracy</h1>
+                <P>accuracy of the app is highly dependant on the OpenWeather API. All the data is sourced from Open Weather Map. They come up with various techniques in weather predictions and also house a pool of weather data dating back to 1st January 1970. Unfortunately the data is taken from certain cities around the world which may not include your locality <a class="text-sky-400" target="_blank" href="https://openweathermap.org/accuracy-and-quality">click here</a> to read more about the data accuracy</P>
+            </article>
+            <article>
+                <h1 class="text-xl mb-1 text-white">Developed By</h1>
+                <img src="./images//yawson_dev.svg" width="150" alt="Yawson.Dev">
+            </article>
+        </aside>
+        <div class="flex flex-col overflow-hidden" >
+            <header class="px-1 flex gap-20 lg:pl-20">
+                <div class="bg-[#4ACAF4] min-h-[177px] max-w-full rounded-[28px] p-5 grow">
+                    <div class="flex justify-between">
+                        <div class="flex flex-wrap items-center h-14 gap-5">
+                            <div id="current-weather-img" class="w-[73px] h-[63px] rounded-[20px] bg-center"></div>
+                            <h3 id="current-weather-sum" class="text-white"></h3>
+                        </div>
+                        <div class="ml-5">
+                            <div class="flex text-right justify-end flex-wrap">
+                                <div id="loading" class="one active">
+                                </div>
+                                <h1 id="city-name" class="text-slate-400 text-xl lg:text-3xl font-bold ml-auto"></h1>
+                                <h1 class="text-white text-right ml-5 text-xl lg:text-3xl font-bold">Current Weather</h1>
+                            </div>
+                            <h1 id="weathertime" class="text-right text-slate-400 text-xl lg:text-2xl"></h1>
+                        </div>
+                    </div>
+                    <p id="current-weather-desc" class="text-white mt-5 ml-5 text-xl"></p>
+                </div>
+                <iframe id="map" class="hidden lg:block  lg:rounded-[28px] lg:bg-slate-400"  style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </header>
+            <!-- current weather summary -->
+            <section id="summary" class="mb-16 mt-5 mx-1 flex gap-[35px] overflow-auto lg:ml-20"></section>
+            <!-- weather forcast and history -->
+            <section id="forcast" class="flex px-1 gap-10 overflow-auto lg:ml-20">
+                <section class="sec-loading">
+                    <div class="one">
+                    </div>
+                </section>
+            </section>
+        </div>
+        <button class="info-btn fixed w-10 h-10 top-3 left-3 rounded-full bg-sky-500 shadow-lg text-white lg:hidden">i</button>
+        <div id="info" class="hidden fixed top-0 left-0 w-screen h-screen bg-[#000000cc] lg:hidden">
+            <button class="info-btn fixed w-10 h-10 top-3 left-3 rounded-full bg-red-500">X</button>
+            <aside
+                class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-500 h-[calc(100dvh-50px)] p-5 overflow-auto text-slate-200  flex flex-col gap-7 rounded-[28px] lg:sticky lg:translate-x-0 lg:translate-y-0 lg:left-0 lg:top-7 lg:max-w-[350px]  ">
+                <article>
+                    <h1 class="text-xl mb-1 text-white">Powered by</h1>
+                    <a target="_blank" href="https://openweathermap.org/">
+                        <img width="150" src="./images/open_weather_logo.png" alt="open weather map">
+                    </a>
+                </article>
+                <article>
+                    <h1 class="text-xl mb-1 text-white">About</h1>
+                    <p>This is a weather app built to provide the current weather predictions and weather forcast for the following
+                        seven days.</p>
+                </article>
+                <article>
+                    <h1 class="text-xl mb-1 text-white">Data Accuracy</h1>
+                    <P>accuracy of the app is highly dependant on the OpenWeather API. All the data is sourced from Open Weather
+                        Map. They come up with various techniques in weather predictions and also house a pool of weather data
+                        dating back to 1st January 1970. Unfortunately the data is taken from certain cities around the world which
+                        may not include your locality <a class="text-sky-400" target="_blank"
+                            href="https://openweathermap.org/accuracy-and-quality">click here</a> to read more about the data
+                        accuracy</P>
+                </article>
+                <article>
+                    <h1 class="text-xl mb-1 text-white">Developed By</h1>
+                    <img src="./images//yawson_dev.svg" width="150" alt="Yawson.Dev">
+                </article>
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>
