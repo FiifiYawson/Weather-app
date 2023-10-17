@@ -7,7 +7,7 @@ module.exports = {
         app: path.resolve(__dirname, "src", "scripts", "index.js"),
     },
     output: {
-        path: path.resolve(__dirname, "static"),
+        path: path.resolve(__dirname, "docs"),
         filename: "[name].js",
     },
     devtool: "source-map",
@@ -15,7 +15,7 @@ module.exports = {
         port: 4000,
         hot: true,
         static: {
-            directory: path.resolve(__dirname, "static")
+            directory: path.resolve(__dirname, "docs")
         },
         watchFiles: ["src/**/*"]
     },
