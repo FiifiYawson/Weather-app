@@ -1623,13 +1623,13 @@ function fetchData() {
 
         const weatherData = []
 
-        const req1 = fetch(`http://api.openweathermap.org/data/3.0/onecall/timemachine?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=db59d7740041baff03be425019205efb&units=metric&dt=${yesterday}`)
+        const req1 = fetch(`https://api.openweathermap.org/data/3.0/onecall/timemachine?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=db59d7740041baff03be425019205efb&units=metric&dt=${yesterday}`)
             .then(res => res.json())
             .then(data => {
                 weatherData.unshift(data.data[0])
             })
 
-        const req2 = fetch(`http://api.openweathermap.org/data/3.0/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=db59d7740041baff03be425019205efb&units=metric`)
+        const req2 = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=db59d7740041baff03be425019205efb&units=metric`)
             .then(res => res.json())
             .then(data => {
                 // format the data so that it is consistent with the others and render them// 
